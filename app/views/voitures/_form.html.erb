@@ -1,0 +1,42 @@
+<%= form_with(model: voiture) do |form| %>
+  <% if voiture.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(voiture.errors.count, "error") %> prohibited this voiture from being saved:</h2>
+
+      <ul>
+        <% voiture.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :immatriculation %>
+    <%= form.text_field :immatriculation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :couleur %>
+    <%= form.text_field :couleur %>
+  </div>
+
+  <div class="field">
+    <%= form.label :marque %>
+    <%= form.text_field :marque %>
+  </div>
+
+  <div class="field">
+    <%= form.label :modele %>
+    <%= form.text_field :modele %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date_mise_en_service %>
+    <%= form.date_select :date_mise_en_service %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
