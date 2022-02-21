@@ -12,12 +12,17 @@
 
 <p>
   <strong>Marque:</strong>
-  <%= @voiture.marque %>
+  <%= link_to @voiture.marque.libelle, @voiture.marque %>
 </p>
 
 <p>
   <strong>Modele:</strong>
   <%= @voiture.modele %>
+</p>
+
+<p>
+  <strong>Personne:</strong>
+  <%= @voiture.personne.nom %>
 </p>
 
 <p>
