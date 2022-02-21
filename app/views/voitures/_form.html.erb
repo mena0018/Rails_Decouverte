@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :marque %>
-    <%= form.text_field :marque %>
+    <%= form.label :marque_id %>
+    <%= form.collection_select :marque_id, Marque.order("libelle").all, :id, :libelle %>
   </div>
 
   <div class="field">
@@ -34,6 +34,11 @@
   <div class="field">
     <%= form.label :date_mise_en_service %>
     <%= form.date_select :date_mise_en_service %>
+  </div>
+
+  <div class="field">
+    <%= form.label :personne_id %>
+    <%= form.collection_select :personne_id, Personne.order("nom").all, :id, :nom %>
   </div>
 
   <div class="actions">
