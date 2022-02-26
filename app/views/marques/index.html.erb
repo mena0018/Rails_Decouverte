@@ -13,8 +13,6 @@
   <tbody>
     <% @marques.each do |marque| %>
       <tr>
-      <td><%= link_to @voiture.modele, marque.libelle %></td>
-
         <td><%= marque.libelle %></td>
         <td><%= link_to 'Show', marque %></td>
         <td><%= link_to 'Edit', edit_marque_path(marque) %></td>
@@ -27,3 +25,4 @@
 <br>
 
 <%= link_to 'New Marque', new_marque_path %>
+
