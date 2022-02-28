@@ -15,5 +15,12 @@
   <%= @personne.date_naissance %>
 </p>
 
+<p>
+  <strong>Voiture(s) :</strong>
+  <% @personne.voitures.each do |voiture| %>
+    <%= link_to voiture.modele, voiture %> 
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_personne_path(@personne) %> |
 <%= link_to 'Back', personnes_path %>
