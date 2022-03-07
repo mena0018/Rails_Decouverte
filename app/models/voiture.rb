@@ -1,6 +1,6 @@
 class Voiture < ApplicationRecord
     belongs_to :marque # Nom de la classe étrangère, en snake_case
-    belongs_to :personne 
+    belongs_to :personne, optional: true
 
     def self.data
         contenu = File.read('./db/voitures.xml')
@@ -10,7 +10,7 @@ class Voiture < ApplicationRecord
             t = Marque.where(libelle:data["marque"]["nom"])
             id = 0
             if (t.length > 0)
-                id = t.id 
+                id = t.first.id 
             else
                 m =  Marque.create(libelle:data["marque"]["nom"])
                 id = m.id
@@ -21,7 +21,7 @@ class Voiture < ApplicationRecord
                 couleur: data['couleur'],
                 marque_id: id,
                 modele: data['modele'],
-                date_mise_en_service: data['created_at'] 
+                date_mise_en_service: data['date_mise_en_service'] 
             )
         end
     end
