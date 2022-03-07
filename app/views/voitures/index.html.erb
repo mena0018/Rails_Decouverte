@@ -17,17 +17,7 @@
 
   <tbody>
     <% @voitures.each do |voiture| %>
-      <tr>
-        <td><%= voiture.immatriculation %></td>
-        <td><%= voiture.couleur %></td>
-        <td><%= link_to voiture.marque.libelle, voiture.marque %></td>
-        <td><%= voiture.modele %></td>
-        <td><%= voiture.date_mise_en_service %></td>
-        <td><%= link_to voiture.personne.try(:nom), voiture.personne %></td> 
-        <td><%= link_to 'Show', voiture %></td>
-        <td><%= link_to 'Edit', edit_voiture_path(voiture) %></td>
-        <td><%= link_to 'Destroy', voiture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+       <%= render "voitures/partial",  voiture:voiture  =%>
     <% end %>
   </tbody>
 </table>

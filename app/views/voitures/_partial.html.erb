@@ -1,0 +1,31 @@
+<div style="display:flex; justify-content:space-around"> 
+  <p style="width:15%">
+  <strong>Immatriculation:</strong>
+  <%= voiture.immatriculation %>
+  </p>
+
+  <p style="width:15%">
+  <strong>Couleur:</strong>
+  <%= voiture.couleur %>
+  </p>
+
+  <p style="width:15%">
+  <strong>Marque:</strong>
+  <%= link_to voiture.marque.libelle, voiture.marque %>
+  </p>
+
+  <p style="width:15%">
+  <strong>Modele:</strong>
+  <%= voiture.modele %>
+  </p>
+
+  <p style="width:15%">
+  <strong>Personne:</strong>
+  <%= voiture.personne.try(:nom) =%>
+  </p>
+
+  <p style="width:15%">
+  <strong>Date mise en service:</strong>
+  <%= voiture.date_mise_en_service %>
+  </p>
+</div>

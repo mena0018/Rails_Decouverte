@@ -8,7 +8,7 @@
   <p>
       <strong>Modèle :</strong>
       <% @marque.voitures.each do |voiture| %>
-        <%= link_to voiture.modele, voiture %> 
+        <%= render "voitures/partial",  voiture:voiture  =%>
       <% end %>
   </p>
 

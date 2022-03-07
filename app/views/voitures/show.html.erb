@@ -1,34 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Immatriculation:</strong>
-  <%= @voiture.immatriculation %>
-</p>
+<%= render "voitures/partial",  voiture:voiture  =%>
 
-<p>
-  <strong>Couleur:</strong>
-  <%= @voiture.couleur %>
-</p>
 
-<p>
-  <strong>Marque:</strong>
-  <%= link_to @voiture.marque.libelle, @voiture.marque %>
-</p>
-
-<p>
-  <strong>Modele:</strong>
-  <%= @voiture.modele %>
-</p>
-
-<p>
-  <strong>Personne:</strong>
-  <%= link_to @voiture.personne.nom, @voiture.personne =%>
-</p>
-
-<p>
-  <strong>Date mise en service:</strong>
-  <%= @voiture.date_mise_en_service %>
-</p>
-
+<div style="display:flex; justify-content:space-around"> 
 <%= link_to 'Edit', edit_voiture_path(@voiture) %> |
 <%= link_to 'Back', voitures_path %>
+</div>
