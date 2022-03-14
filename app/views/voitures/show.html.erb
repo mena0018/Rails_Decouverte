@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<%= render "voitures/partial",  voiture:voiture  =%>
+<div style="display: flex; justify-content: space-around;"> 
+    <%= render "voitures/partial",  voiture:@voiture  =%>
+</div>
 
 
-<div style="display:flex; justify-content:space-around"> 
+<div style="display:flex; justify-content:space-around; margin:30px auto;"> 
 <%= link_to 'Edit', edit_voiture_path(@voiture) %> |
 <%= link_to 'Back', voitures_path %>
 </div>
